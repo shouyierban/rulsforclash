@@ -3,5 +3,8 @@
 # UPDATED: 2024-12-10 11:10:35
 
 DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,bytedance.com
+DOMAIN-SUFFIX,zijieapi.com
+DOMAIN-SUFFIX,ibytedapm
 DOMAIN-KEYWORD,douyin
-DOMAIN-KEYWORD,creator
+
