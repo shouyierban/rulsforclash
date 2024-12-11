@@ -6,5 +6,11 @@ DOMAIN-SUFFIX,douyin.com
 DOMAIN-SUFFIX,bytedance.com
 DOMAIN-SUFFIX,zijieapi.com
 DOMAIN-SUFFIX,ibytedapm
+DOMAIN,lf3-short.ibytedapm.com
+DOMAIN,lf3-config.bytetcc.com
+DOMAIN,s1.music.126.net
+DOMAIN,whois.pconline.com.cn
+DOMAIN,pubstatic.b0.upaiyun.com
+DOMAIN,mcs.snssdk.com
 DOMAIN-KEYWORD,douyin
 
