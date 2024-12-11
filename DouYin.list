@@ -10,6 +10,10 @@ DOMAIN,lf3-short.ibytedapm.com
 DOMAIN,lf3-config.bytetcc.com
 DOMAIN,lf1-cdn-tos.bytegoofy.com
 DOMAIN,lf-security.bytegoofy.com
+DOMAIN,unpkg.byted-static.com
+DOMAIN,lf-c-flwb.bytetos.com
+DOMAIN,lf3-csp.bytetos.com
+DOMAIN,lf3-beecdn.bytetos.com
 DOMAIN,imapi.snssdk.com
 DOMAIN,s1.music.126.net
 DOMAIN,whois.pconline.com.cn
@@ -17,7 +21,6 @@ DOMAIN,pubstatic.b0.upaiyun.com
 DOMAIN,mcs.snssdk.com
 DOMAIN-KEYWORD,douyin
 DOMAIN-KEYWORD,snssdk
-IP-CIDR,111.31.57.135/32,no-resolve
-IP-CIDR,185.199.108.133/32,no-resolve
-IP-CIDR,185.199.109.133/32,no-resolve
+DOMAIN-KEYWORD,bytetos
+
 
