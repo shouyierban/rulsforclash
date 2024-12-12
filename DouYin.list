@@ -16,8 +16,11 @@ DOMAIN,lf3-csp.bytetos.com
 DOMAIN,lf3-beecdn.bytetos.com
 DOMAIN,imapi.snssdk.com
 DOMAIN,mcs.snssdk.com
+DOMAIN,vod.bytedanceapi.com
+DOMAIN,imagex.bytedanceapi.com
 DOMAIN-KEYWORD,douyin
 DOMAIN-KEYWORD,snssdk
 DOMAIN-KEYWORD,bytetos
+DOMAIN-KEYWORD,bytedance
 
 
