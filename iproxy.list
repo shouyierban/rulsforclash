@@ -7,5 +7,6 @@ DOMAIN,smtp.gmail.com
 
 # rambler
 DOMAIN-SUFFIX,rambler.ru
+DOMAIN-SUFFIX,rambler-co.ru
 DOMAIN,smtp.rambler.ru
 DOMAIN-KEYWORD,rambler
