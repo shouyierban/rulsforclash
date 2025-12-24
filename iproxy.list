@@ -2,5 +2,10 @@
 # AUTHOR: Alex
 # UPDATED: 2025-12-22
 
+# gmail
 DOMAIN,smtp.gmail.com
 
+# rambler
+DOMAIN-SUFFIX,rambler.ru
+DOMAIN,smtp.rambler.ru
+DOMAIN-KEYWORD,rambler
