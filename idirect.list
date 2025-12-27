@@ -18,9 +18,7 @@ DOMAIN,alt4-mtalk.google.com
 DOMAIN,alt5-mtalk.google.com
 DOMAIN,alt6-mtalk.google.com
 DOMAIN,mtalk.google.com
-DOMAIN,android.apis.google.com
-DOMAIN,device-provisioning.googleapis.com
-DOMAIN,firebaseinstallations.googleapis.com
+
 
 # FCM-IP
 IP-CIDR,108.177.125.188/32,no-resolve
