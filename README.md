@@ -1,2 +1,2 @@
 # rulsforclash
-rulss for clashmeta
+- rules for clashmeta
