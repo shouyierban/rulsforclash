@@ -11,3 +11,6 @@ DOMAIN-SUFFIX,rambler-co.ru
 DOMAIN,smtp.rambler.ru
 DOMAIN-KEYWORD,rambler
 DOMAIN-SUFFIX,linux.do
+
+# z.org
+DOMAIN,smtp.elektrine.com
