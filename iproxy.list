@@ -14,3 +14,6 @@ DOMAIN-SUFFIX,linux.do
 
 # z.org
 DOMAIN,smtp.elektrine.com
+
+# rambler
+DOMAIN-SUFFIX,linux.do
