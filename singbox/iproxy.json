@@ -1,6 +1,18 @@
 {
   "rules": [
     {
+      "domain": [
+        "smtp.gmail.com", 
+        "smtp.rambler.ru", 
+        "smtp.elektrine.com"
+      ]
+    },
+    {
+      "domain_keyword": [
+        "rambler"
+      ]
+    },
+    {
       "domain_suffix": [
         "rambler.ru",
         "rambler-co.ru",
