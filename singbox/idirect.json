@@ -1,6 +1,18 @@
 {
   "rules": [
     {
+      "domain": [
+        "theluyuan.com"
+      ]
+    },
+    {
+      "domain_keyword": [
+        "theluyuan",
+        "jjyydw",
+        "zhoumh"
+      ]
+    },
+    {
       "domain_suffix": [
         "theluyuan.com",
         "jjyydw.top",
