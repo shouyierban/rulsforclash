@@ -1,0 +1,12 @@
+{
+  "rules": [
+    {
+      "domain_suffix": [
+        "rambler.ru",
+        "rambler-co.ru",
+        "linux.do"
+      ]
+    }
+  ],
+  "version": 5
+}
