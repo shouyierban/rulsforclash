@@ -1,0 +1,152 @@
+{
+  "$schema": "https://sing-box.sagernet.org/schema.json",
+  "dns": {
+    "servers": [
+      {"tag": "local", "type": "local", "prefer_go": true},
+      {"tag": "ali", "type": "https", "server": "223.5.5.5"},
+      {"tag": "tx", "type": "https", "server": "doh.pub", "domain_resolver": "hosts"},
+      {"tag": "google", "type": "https", "server": "8.8.8.8", "detour": "🔗 默认"},
+      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.19.0.0/16"},
+      {"type": "hosts", "tag": "hosts", "predefined": {"doh.pub": ["1.12.12.21", "120.53.53.53"]}}
+    ],
+    "rules": [
+      {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
+      {"clash_mode": "Direct", "server": "ali"},
+      {"clash_mode": "Global", "server": "fakeip"},
+      {"rule_set": ["fakeipfilter-cn", "idirect", "geosite-cn", "geosite-microsoft@cn", "geosite-private"], "server": "ali"},
+      {"rule_set": "fakeipfilter-!cn", "server": "google"},
+      {"type": "logical", "mode": "and", "rules": [{"query_type": ["A", "AAAA"]}, {"rule_set": "geosite-geolocation-!cn", "invert": true}], "action": "evaluate", "server": "google", "client_subnet": "223.5.5.0/24","timeout": "2s"},
+      {"match_response": true, "rule_set": "geoip-cn", "server": "ali"},
+      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
+    ],
+    "final": "google",
+    "strategy": "ipv4_only",
+    "cache_capacity": 8192,
+    "optimistic": {"enabled": true},
+    "reverse_mapping": true
+  },
+  "outbounds": [
+    {"tag": "🔗 默认", "type": "selector", "outbounds": ["🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"]},
+    {"tag": "📩 Fcm", "type": "selector", "outbounds": ["直连", "🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "🧬 iproxy", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "🌵 Gemini", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "🔍 Google", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "🎥 YouTube", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "👨🏿‍💻 Github", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "📲 Telegram", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "👨🏻‍ AI", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "🎵 TikTok", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "🔑 Reddit", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "🎙 Meta", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "💰 Paypal", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "📚 Twitter", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "💵 Bybit", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "💸 Binance", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "📥 Microsoft", "type": "selector", "outbounds": ["直连", "🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "💧 漏网之鱼", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "🔈 广告拦截", "type": "selector", "outbounds": ["🚫 拒绝连接"]},  
+    {"tag": "🇭🇰 香港", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]}], "interrupt_exist_connections": true},
+    {"tag": "🇹🇼 台湾", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇹🇼|TW|tw|台湾|台|taiwan"]}], "interrupt_exist_connections": true},
+    {"tag": "🇯🇵 日本", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]}], "interrupt_exist_connections": true},
+    {"tag": "🇺🇲 美国", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇺🇸|US|美国|美|🇺🇲"]}], "interrupt_exist_connections": true},
+    {"tag": "🇸🇬 新加坡", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["新加坡|坡|🇸🇬"]}], "interrupt_exist_connections": true},
+    {"tag": "🪜 其他", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["德国|德|🇩🇪|韩国|英国|法国"]}], "interrupt_exist_connections": true},
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["🔗 默认", "🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "直连", "type": "direct", "domain_resolver": "ali"},
+    {"tag": "🚫 拒绝连接", "type": "block"}
+  ],
+  "http_clients": [
+    {"tag": "直连下载", "detour": "直连"}
+  ],
+  "route": {
+    "rules": [
+      {"type": "logical", "mode": "or", "rules": [{"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "stun", "quic", "dns"], "timeout": "100ms"},
+      {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
+      {"ip_is_private": true, "outbound": "直连"},
+      {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": ["stun", "quic"]}], "action": "reject", "no_drop": true},
+      {"network": "icmp", "action": "resolve"},
+      {"network": "icmp", "outbound": "直连"},
+      {"clash_mode": "Direct", "outbound": "直连"},
+      {"clash_mode": "Global", "outbound": "GLOBAL"},
+      {"rule_set": "idirect", "outbound": "直连"},
+      {"rule_set": "iproxy", "outbound": "🧬 iproxy"},
+      {"rule_set": "geosite-googlefcm", "outbound": "📩 Fcm"},
+      {"rule_set": "geosite-google-gemini", "outbound": "🌵 Gemini"},
+      {"rule_set": "geosite-google-play", "outbound": "🔍 Google"},
+      {"rule_set": "geosite-youtube", "outbound": "🎥 YouTube"},
+      {"rule_set": "geosite-google", "outbound": "🔍 Google"},
+      {"rule_set": "geosite-google-registry", "outbound": "🔍 Google"},
+      {"rule_set": "geosite-category-ai-!cn", "outbound": "👨🏻‍ AI"},
+      {"rule_set": "geosite-github", "outbound": "👨🏿‍💻 Github"},
+      {"rule_set": "geosite-tiktok@ads", "outbound": "🔈 广告拦截"},
+      {"rule_set": "geosite-tiktok", "outbound": "🎵 TikTok"},
+      {"rule_set": "geosite-telegram", "outbound": "📲 Telegram"},
+      {"rule_set": "geoip-telegram", "outbound": "📲 Telegram"},
+      {"rule_set": "geosite-facebook", "outbound": "🎙 Meta"},
+      {"rule_set": "geosite-instagram", "outbound": "🎙 Meta"},
+      {"rule_set": "geosite-threads", "outbound": "🎙 Meta"},
+      {"rule_set": "geosite-whatsapp", "outbound": "🎙 Meta"},
+      {"rule_set": "geosite-reddit", "outbound": "🔑 Reddit"},
+      {"rule_set": "geosite-bybit", "outbound": "💵 Bybit"},
+      {"rule_set": "geosite-binance", "outbound": "💸 Binance"},
+      {"rule_set": "geosite-twitter@ads", "action": "reject"},
+      {"rule_set": "geosite-twitter@ads", "outbound": "🔈 广告拦截"},
+      {"rule_set": "geosite-twitter", "outbound": "📚 Twitter"},
+      {"rule_set": "geosite-microsoft@cn", "outbound": "直连"},
+      {"rule_set": "geosite-microsoft", "outbound": "📥 Microsoft"},
+      {"rule_set": "geosite-paypal", "outbound": "💰 Paypal"},
+      {"rule_set": "geosite-private", "outbound": "直连"},
+      {"rule_set": "geosite-geolocation-!cn", "outbound": "🔗 默认"},
+      {"inbound": "mixed-in", "action": "resolve"},
+      {"rule_set": "geoip-cn", "outbound": "直连"}
+    ],
+    "rule_set": [
+      {"tag": ["iproxy", "idirect"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/shouyierban/rulsforclash/refs/heads/main/singbox/{tag}.json"},
+      {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"},
+      {"tag": ["geosite-google-gemini", "geosite-facebook", "geosite-instagram", "geosite-whatsapp", "geosite-threads", "geosite-reddit", "geosite-twitter@ads", "geosite-twitter", "geosite-bybit", "geosite-binance", "geosite-category-ai-!cn", "geosite-youtube", "geosite-google", "geosite-google-play", "geosite-googlefcm", "geosite-github", "geosite-microsoft", "geosite-microsoft@cn", "geosite-google-registry", "geosite-telegram", "geosite-tiktok@ads", "geosite-tiktok", "geosite-paypal", "geosite-geolocation-!cn", "geosite-cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
+      {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"},
+      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"}
+    ],
+    "final": "💧 漏网之鱼",
+    "default_http_client": "直连下载",
+    "auto_detect_interface": true,
+    "default_domain_resolver": {"server": "ali"}
+  },
+  "inbounds": [
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
+        }
+      }
+    },
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    }
+  },
+  "certificate": {
+    "store": "chrome"
+  },
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  }
+}
