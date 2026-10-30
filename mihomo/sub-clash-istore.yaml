@@ -1,6 +1,6 @@
 # 锚点
 mr: &mr {type: select, proxies: [🇭🇰 香港节点, 🇺🇲 美国节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇹🇼 台湾节点, 🇩🇪 德国节点, 🪜 全部]}
-pr: &pr {type: select, proxies: [🎯 直连, 默认代理, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🇩🇪 德国节点, 🔯 备用1, 🅱️ 备用2, 🪜 全部]}
+pr: &pr {type: select, proxies: [🎯 直连, 默认, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🇸🇬 新加坡节点, 🇹🇼 台湾节点, 🇩🇪 德国节点, 🔯 备用1, 🅱️ 备用2, 🪜 全部]}
 
 # 全局配置
 mixed-port: 7890
@@ -81,11 +81,11 @@ dns:
     - https://dns.alidns.com/dns-query#disable-qtype-65=true
     - https://doh.pub/dns-query#disable-qtype-65=true
     "rule-set:fakeipfilter_!cn":
-    - https://8.8.8.8/dns-query#默认代理&disable-qtype-65=true
+    - https://8.8.8.8/dns-query#默认&disable-qtype-65=true
   nameserver:
-    - https://8.8.8.8/dns-query#默认代理&ecs=223.5.5.0/24
+    - https://8.8.8.8/dns-query#默认&ecs=223.5.5.0/24
   fallback:
-    - https://8.8.8.8/dns-query#默认代理
+    - https://8.8.8.8/dns-query#默认
   fallback-filter:
     geoip: true
     geoip-code: CN
@@ -98,7 +98,7 @@ dns:
 
 # 策略组
 proxy-groups:
-  - {name: 默认代理, <<: *mr}
+  - {name: 默认, <<: *mr}
   - {name: 📩 Fcm, <<: *pr}
   - {name: 🧬 iproxy, <<: *pr}
   - {name: ☘️ Gemini, <<: *pr}
@@ -118,14 +118,14 @@ proxy-groups:
   - {name: 🪟 Microsoft, <<: *pr}
   - {name: 🐟 漏网之鱼, type: select, <<: *pr, include-all: true}
   - {name: 🎯 直连, type: select, proxies: [DIRECT]}
-  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|🇭🇰|hk|hongkong|hong kong"}
-  - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日|🇯🇵|jp|东京|大阪|沪日|japan"}
-  - {name: 🇸🇬 新加坡节点, type: select, include-all: true, filter: "(?i)新|🇸🇬|SG|Singapore|新加坡|狮"}
-  - {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: "(?i)台|🇹🇼|TW|Taiwan"}
-  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|🇺🇲|🇺🇸|凤凰城|洛杉矶|圣何塞|西雅图|US|America|United States|USA"}
-  - {name: 🇩🇪 德国节点, type: select, include-all: true, filter: "(?i)德国|法兰|DE|Germany|de|柏|法国|🇫🇷|英国|都柏林"}
-  - {name: 🔯 备用1, type: select, include-all: true}
-  - {name: 🅱️ 备用2, type: select, include-all: true}
+  - {name: 🇭🇰 香港节点, type: fallback, include-all: true, interval: 600, filter: "(?i)港|🇭🇰|hk|hongkong|hong kong"}
+  - {name: 🇯🇵 日本节点, type: fallback, include-all: true, interval: 600, filter: "(?i)日|🇯🇵|jp|东京|大阪|沪日|japan"}
+  - {name: 🇸🇬 新加坡节点, type: fallback, include-all: true, interval: 600, filter: "(?i)新|🇸🇬|SG|Singapore|新加坡|狮"}
+  - {name: 🇹🇼 台湾节点, type: fallback, include-all: true, interval: 600, filter: "(?i)台|🇹🇼|TW|Taiwan"}
+  - {name: 🇺🇲 美国节点, type: fallback, include-all: true, interval: 600, filter: "(?i)美|🇺🇲|🇺🇸|凤凰城|洛杉矶|圣何塞|西雅图|US|America|United States|USA"}
+  - {name: 🇩🇪 德国节点, type: fallback, include-all: true, interval: 600, filter: "(?i)德国|法兰|DE|Germany|de|柏|法国|🇫🇷|英国|都柏林"}
+  - {name: 🔯 备用1, type: select, include-all: true, filter: "(?i)港|🇭🇰|hk|hongkong|hong kong"}
+  - {name: 🅱️ 备用2, type: select, include-all: true, filter: "(?i)台|🇹🇼|TW|Taiwan"}
   - {name: 🪜 全部, type: select, include-all: true}
   
 rules: 
@@ -137,7 +137,7 @@ rules:
   - RULE-SET,idirect,🎯 直连
   - RULE-SET,google_cn,🎯 直连
   - RULE-SET,iproxy,🧬 iproxy
-  - RULE-SET,Cloudflare,默认代理
+  - RULE-SET,Cloudflare,默认
   - RULE-SET,google_gemini,☘️ Gemini
   - RULE-SET,openai,👨🏻‍🎓 AI
   - RULE-SET,category-ai-chat,👨🏻‍🎓 AI
@@ -167,8 +167,8 @@ rules:
   - RULE-SET,threads,🎙 Meta
   - RULE-SET,facebook_ip,🎙 Meta,no-resolve
   - RULE-SET,Globalmedia,🌎 国外媒体
-  - RULE-SET,GFW,默认代理
-  - RULE-SET,geolocation-!cn,默认代理
+  - RULE-SET,GFW,默认
+  - RULE-SET,geolocation-!cn,默认
   - RULE-SET,private_domain,🎯 直连
   - RULE-SET,direct2,🎯 直连
   - RULE-SET,direct3,🎯 直连
