@@ -22,7 +22,7 @@ profile:
   store-fake-ip: true
 
 external-controller: 0.0.0.0:9091
-secret: ""
+secret: "BTFcXIhG"
 external-ui: ui
 external-ui-name: zashboard
 external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
