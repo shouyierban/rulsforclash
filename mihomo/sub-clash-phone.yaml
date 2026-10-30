@@ -86,8 +86,8 @@ proxy-groups:
   - {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: "(?i)台|🇹🇼|TW|Taiwan"}
   - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|🇺🇲|🇺🇸|凤凰城|洛杉矶|圣何塞|西雅图|US|America|United States|USA"}
   - {name: 🇩🇪 德国节点, type: select, include-all: true, filter: "(?i)德国|法兰|DE|Germany|de|柏|法国|🇫🇷|英国|都柏林"}
-  - {name: 🔯 备用1, type: select, include-all: true}
-  - {name: 🅱️ 备用2, type: select, include-all: true}
+  - {name: 🔯 备用1, type: select, include-all: true, filter: "(?i)港|🇭🇰|hk|hongkong|hong kong"}
+  - {name: 🅱️ 备用2, type: select, include-all: true, filter: "(?i)台|🇹🇼|TW|Taiwan"}
   - {name: 🪜 全部, type: select, include-all: true}
   
 rules: 
