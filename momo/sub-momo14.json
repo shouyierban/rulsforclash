@@ -43,7 +43,7 @@
     {"tag": "💵 Bybit", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
     {"tag": "💸 Binance", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
     {"tag": "📥 Microsoft", "type": "selector", "outbounds": ["直连", "🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
-    {"tag": "💧 漏网之鱼", "type": "selector", "outbounds": ["🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
+    {"tag": "💧 漏网之鱼", "type": "selector", "outbounds": ["直连", "🔗 默认","🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇺🇲 美国", "🇸🇬 新加坡", "🪜 其他"], "interrupt_exist_connections": true},
     {"tag": "🔈 广告拦截", "type": "selector", "outbounds": ["🚫 拒绝连接"]},  
     {"tag": "🇭🇰 香港", "type": "urltest", "outbounds": [], "interrupt_exist_connections": true, "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
     {"tag": "🇹🇼 台湾", "type": "urltest", "outbounds": [], "interrupt_exist_connections": true, "url": "https://clients1.google.com/generate_204", "interval": "30m", "tolerance": 100},
