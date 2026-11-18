@@ -169,6 +169,7 @@ rules:
   - RULE-SET,Globalmedia,🌎 国外媒体
   - RULE-SET,GFW,默认
   - RULE-SET,geolocation-!cn,默认
+  - RULE-SET,douyin_domain,🎯 直连
   - RULE-SET,private_domain,🎯 直连
   - RULE-SET,direct2,🎯 直连
   - RULE-SET,direct3,🎯 直连
@@ -225,6 +226,7 @@ rule-providers:
   threads: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/threads.mrs" }
   twitter-ads: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter@ads.mrs" }
   twitter_dom: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitter.mrs" }
+  douyin_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/douyin.mrs" }
   Chinacompany_ip: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaCompanyIp.list" }
   cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs" }
   google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs" }
