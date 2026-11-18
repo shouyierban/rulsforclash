@@ -1,0 +1,37 @@
+{
+  "rules": [
+    {
+      "domain": [
+        "lf3-short.ibytedapm.com",
+        "lf3-config.bytetcc.com",
+        "lf1-cdn-tos.bytegoofy.com",
+        "lf-security.bytegoofy.com",
+        "unpkg.byted-static.com",
+        "lf-c-flwb.bytetos.com",
+        "lf3-csp.bytetos.com",
+        "lf3-beecdn.bytetos.com",
+        "imapi.snssdk.com",
+        "mcs.snssdk.com",
+        "vod.bytedanceapi.com",
+        "imagex.bytedanceapi.com"
+      ]
+    },
+    {
+      "domain_keyword": [
+        "douyin",
+        "snssdk",
+        "bytetos",
+        "bytedance"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "douyin.com",
+        "bytedance.com",
+        "zijieapi.com",
+        "ibytedapm"
+      ]
+    }
+  ],
+  "version": 5
+}
