@@ -13,7 +13,8 @@
         "imapi.snssdk.com",
         "mcs.snssdk.com",
         "vod.bytedanceapi.com",
-        "imagex.bytedanceapi.com"
+        "imagex.bytedanceapi.com",
+        "v9-awememusicpgc.amemv.com"
       ]
     },
     {
@@ -21,7 +22,8 @@
         "douyin",
         "snssdk",
         "bytetos",
-        "bytedance"
+        "bytedance",
+        "awememusicpgc"
       ]
     },
     {
@@ -29,7 +31,28 @@
         "douyin.com",
         "bytedance.com",
         "zijieapi.com",
-        "ibytedapm"
+        "ibytedapm.com",
+        "douyincdn.com",
+        "douyinliving.com",
+        "douyinvod.com",
+        "douyinpic.com",
+        "bytegecko.com",
+        "byteeffecttos.com",
+        "byteimg.com",
+        "ecombdimg.com",
+        "bytehwm.com",
+        "bytecdn.com",
+        "zjcdn.com",
+        "snssdk.com",
+        "amemv.com",
+        "bytetos.com",
+        "awemeughun.com",
+        "ecombdapi.com",
+        "ttwebview.com",
+        "bytetcc.com",
+        "bytednsdoc.com",
+        "bytegoofy.com",
+        "yhgfb-cn-static.com"
       ]
     }
   ],
