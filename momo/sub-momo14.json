@@ -103,11 +103,12 @@
       {"rule_set": "geoip-cn", "outbound": "直连"}
     ],
     "rule_set": [
-      {"tag": ["iproxy", "idirect" , "douyin"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/shouyierban/rulsforclash/refs/heads/main/singbox/{tag}.json"},
-      {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"},
-      {"tag": ["geosite-google-gemini", "geosite-facebook", "geosite-instagram", "geosite-whatsapp", "geosite-threads", "geosite-reddit", "geosite-twitter@ads", "geosite-twitter", "geosite-bybit", "geosite-binance", "geosite-category-ai-!cn", "geosite-youtube", "geosite-google", "geosite-google-play", "geosite-googlefcm", "geosite-github", "geosite-microsoft", "geosite-microsoft@cn", "geosite-google-registry", "geosite-telegram", "geosite-tiktok@ads", "geosite-tiktok", "geosite-paypal", "geosite-douyin", "geosite-geolocation-!cn", "geosite-cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
-      {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"},
-      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"}
+      {"tag": ["iproxy", "idirect"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/shouyierban/rulsforclash/refs/heads/main/singbox/{tag}.json", "update_interval": "2d"},
+      {"tag": ["douyin"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/shouyierban/rulsforclash/refs/heads/main/singbox/{tag}.srs", "download_detour": "直连", "update_interval": "2d"},
+      {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json", "update_interval": "2d"},
+      {"tag": ["geosite-google-gemini", "geosite-facebook", "geosite-instagram", "geosite-whatsapp", "geosite-threads", "geosite-reddit", "geosite-twitter@ads", "geosite-twitter", "geosite-bybit", "geosite-binance", "geosite-category-ai-!cn", "geosite-youtube", "geosite-google", "geosite-google-play", "geosite-googlefcm", "geosite-github", "geosite-microsoft", "geosite-microsoft@cn", "geosite-google-registry", "geosite-telegram", "geosite-tiktok@ads", "geosite-tiktok", "geosite-paypal", "geosite-douyin", "geosite-geolocation-!cn", "geosite-cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs", "update_interval": "2d"},
+      {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs", "update_interval": "2d"},
+      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs", "update_interval": "2d"}
     ],
     "final": "💧 漏网之鱼",
     "default_http_client": "直连下载",
