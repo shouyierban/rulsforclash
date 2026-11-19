@@ -54,6 +54,12 @@
         "bytegoofy.com",
         "yhgfb-cn-static.com"
       ]
+    }，
+    {
+      "ip_cidr": [
+        "8.134.241.0/24",
+        "163.98.96.242.0/24"
+      ]
     }
   ],
   "version": 5
