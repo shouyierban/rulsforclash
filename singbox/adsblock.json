@@ -1,0 +1,23 @@
+{
+  "rules": [
+    {
+      "domain": [
+        "appsflyer.com",
+        "appsflyersdk.com"
+      ]
+    },
+    {
+      "domain_keyword": [
+        "appsflyer",
+        "appsflyersdk"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "appsflyer.com",
+        "appsflyersdk.com"
+      ]
+    }
+  ],
+  "version": 5
+}
